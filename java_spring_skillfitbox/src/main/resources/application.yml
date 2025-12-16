@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: skillfitbox
+
+  # DataSource Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # FreeMarker Configuration
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+
+server:
+  port: 9090
+  servlet:
+    context-path: /
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /api/api-docs
+  swagger-ui:
+    path: /api/swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    display-request-duration: true
+    display-operation-id: true
+    show-extensions: true
+    show-common-extensions: true
