@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: skillfitbox
+
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5434/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # JPA / Hibernate Configuration
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    open-in-view: false
+
+  # FreeMarker Configuration
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+
+server:
+  port: 8090
+  servlet:
+    context-path: /
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /api/api-docs
+  swagger-ui:
+    path: /api/swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    display-request-duration: true
+    display-operation-id: true
+    show-extensions: true
+    show-common-extensions: true
